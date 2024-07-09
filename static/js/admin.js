@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             options: options
         };
 
-        fetch('http://localhost:5000/forms', {
+        fetch('/forms', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
