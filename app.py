@@ -67,16 +67,7 @@ create_tables()
 #     return render_template('index.html')
 
 
-apitoolkit = APIToolkit(api_key="lfQaLZceaXwzy9Qej6ZsQ21G9DjBR4Sete+4g+5eozwG8IrB")
 
-@app.before_request
-def before_request():
-    apitoolkit.beforeRequest()
-
-@app.after_request
-def after_request(response):
-    apitoolkit.afterRequest(response)
-    return respon
 
 @app.route('/form/<form_id>/data', methods=['POST'])
 def add_form_data(form_id):
