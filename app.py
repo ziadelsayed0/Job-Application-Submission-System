@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 from sqlalchemy.ext.mutable import MutableDict
 import json
 import uuid
@@ -11,6 +12,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///forms.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+CORS(app)
 
 
 db = SQLAlchemy(app)

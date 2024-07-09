@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             military: military.checked,
             worklocation: worklocation.checked,
             contactcenter: ccenter.checked
+
+
         };
 
         const data = {
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .then(response => response.json())
         .then(response => {
             const responseId = response.id;
-            window.location.href = `http://127.0.0.1:5000/forms/${responseId}`;
+            window.location.href = `/forms/${responseId}`;
         })
         .catch(error => {
             console.error('Error:', error);

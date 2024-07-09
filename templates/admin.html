@@ -12,33 +12,33 @@
 <body>
     <div class="container mt-5">
         <h1>Admin Form</h1>
-        <form id="adminForm " class="p-4">
+        <form id="adminForm" class="p-4">
             <div class="form-group">
                 <label for="formname">Name:</label>
                 <input type="text" class="form-control" id="formname" name="name" required>
             </div>
             <label>Options:</label><br>
-        
-          <br/>
+
+            <br />
             <div class="row">
                 <div class="custom-control custom-checkbox col-3">
-                    <input type="checkbox" class="custom-control-input" id="full-name">
+                    <input type="checkbox" class="custom-control-input" id="full-name" name="full-name">
                     <label class="custom-control-label" for="full-name">Full Name</label>
                 </div>
                 <div class="custom-control custom-checkbox col-3">
-                    <input type="checkbox" class="custom-control-input" id="phone1">
+                    <input type="checkbox" class="custom-control-input" id="phone1" name="phone1">
                     <label class="custom-control-label" for="phone1">Phone1</label>
                 </div>
                 <div class="custom-control custom-checkbox col-3">
-                    <input type="checkbox" class="custom-control-input" id="phone2">
+                    <input type="checkbox" class="custom-control-input" id="phone2" name="phone2">
                     <label class="custom-control-label" for="phone2">Phone2</label>
                 </div>
                 <div class="custom-control custom-checkbox col-3">
-                    <input type="checkbox" class="custom-control-input" id="language">
+                    <input type="checkbox" class="custom-control-input" id="language" name="language">
                     <label class="custom-control-label" for="language">Language</label>
                 </div>
             </div>
-
+            
             <div class="row">
                 <div class="custom-control custom-checkbox col-3">
                     <input type="checkbox" class="custom-control-input" id="language2">
@@ -57,7 +57,7 @@
                     <label class="custom-control-label" for="gradst">Graduation Status</label>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="custom-control custom-checkbox col-3">
                     <input type="checkbox" class="custom-control-input" id="university">
@@ -76,8 +76,8 @@
                     <label class="custom-control-label" for="address2">Address2</label>
                 </div>
             </div>
-         
-         
+
+
             <div class="row">
 
                 <div class="custom-control custom-checkbox col-3">
@@ -123,13 +123,13 @@
                 </div>
                 <!-- Add more checkboxes as per your list -->
             </div>
-
             <button type="submit" class="btn btn-primary mt-2">Submit</button>
         </form>
+
     </div>
 
-    <!-- Bootstrap JS -->
 </body>
 
 <script src="../static/js/admin.js"></script>
+
 </html>
