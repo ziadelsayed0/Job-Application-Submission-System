@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('../static/assets/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-image {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .card-footer {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 form-container">
+                <h1 id="formname" class="text-center mt-3">Name</h1>
+                
+                <img src="../static/assets/images/header.png" class="header-image" alt="Header Image">
+                <h2 class="text-center mt-3">Apply now</h2>
+                <form id="your-form-id">
+
+                    <div id="full-name" class="form-group">
+                        <label for="fullName">Full Name in English <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter Your Answer" >
+                    </div>
+
+                    <div id="phone-no" class="form-group">
+                        <label for="primaryPhoneNumber">Primary Phone Number <span class="text-danger">*</span></label>
+                        <input type="tel" class="form-control" id="primaryPhoneNumber" placeholder="Enter Your Answer"
+                            >
+                    </div>
+
+                    <div id="other-phone" class="form-group">
+                        <label for="otherPhoneNumber">Other Phone Number</label>
+                        <input type="tel" class="form-control" id="otherPhoneNumber" placeholder="0">
+                        <small class="form-text text-muted">MIN Length 11 digit</small>
+                    </div>
+
+
+                    <div id="language" class="form-group">
+                        <label for="languageSelect">Main language you're applying for <span
+                                class="text-danger">*</span></label>
+                        <select class="form-control" id="languageSelect" >
+                            <option>Select Your Answer</option>
+                            <option>Arabic</option>
+                            <option>Bengali</option>
+                            <option>Chinese</option>
+                            <option>Chinese - Cantonese</option>
+                            <option>Chinese - Mandarin</option>
+                            <option>Czech</option>
+                            <option>Dutch</option>
+                            <option>English</option>
+                            <option>French</option>
+                            <option>German</option>
+                            <option>Greek</option>
+                            <option>Hausa</option>
+                            <option>Hebrew</option>
+                            <option>Hindi</option>
+                            <option>Italian</option>
+                            <option>Japanese</option>
+                            <option>Korean</option>
+                            <option>Nordics</option>
+                            <option>Persian</option>
+                        </select>
+                    </div>
+
+                    <div id="second-language" class="form-group">
+                        <label for="SecondLanguageSelect">Please select other spoken languages <span
+                                class="text-danger">*</span></label>
+                        <select class="form-control" id="SecondLanguageSelect" >
+                            <option>Select Your Answer</option>
+                            <option>Arabic</option>
+                            <option>Bengali</option>
+                            <option>Chinese</option>
+                            <option>Chinese - Cantonese</option>
+                            <option>Chinese - Mandarin</option>
+                            <option>Czech</option>
+                            <option>Dutch</option>
+                            <option>English</option>
+                            <option>French</option>
+                            <option>German</option>
+                            <option>Greek</option>
+                            <option>Hausa</option>
+                            <option>Hebrew</option>
+                            <option>Hindi</option>
+                            <option>Italian</option>
+                            <option>Japanese</option>
+                            <option>Korean</option>
+                            <option>Nordics</option>
+                            <option>Persian</option>
+                        </select>
+                    </div>
+
+                    <div id="mail" class="form-group">
+                        <label for="MailAddress">Mail Address <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="MailAddress" placeholder="Enter Your E-mail"
+                            >
+                    </div>
+
+
+                    <div id="date" class="form-group">
+                        <label for="birthDate">Date Of Birth<span class="text-danger">*</span></label>
+                        <input type="date" class="form-control" id="birthDate" placeholder="Enter Your birth date"
+                            >
+                    </div>
+
+
+                    <div id="graduate-status" class="form-group">
+                        <label for="graduationStatus">Graduation Status <span class="text-danger">*</span></label>
+                        <select class="form-control" id="graduationStatus" >
+                            <option>Select Your Answer</option>
+                            <option>Graduate</option>
+                            <option>Dropped - Out </option>
+                            <option>Undergraduate </option>
+                        </select>
+                    </div>
+
+
+                    <div id="university" class="form-group">
+                        <label for="universities">University <span class="text-danger">*</span></label>
+                        <select class="form-control" id="universities" >
+                            <option>Select Your Answer</option>
+                            <option>Ahram Canadian University</option>
+                            <option>Ain Shams University</option>
+                            <option>Al Alamein International University</option>
+                            <option>Al-Azhar University</option>
+                            <option>Alexandria University</option>
+                            <option>Arab Academy for Science, Technology and Maritime Transport</option>
+                            <option>Arish University</option>
+                            <option>Assiut University</option>
+                            <option>Aswan University</option>
+                            <option>Badr University in Cairo</option>
+                            <option>Benha University</option>
+                            <option>Beni-Suef University</option>
+                            <option>Cairo University</option>
+                            <option>Damanhour University</option>
+                            <option>Damietta University</option>
+                            <option>Delta University for Science and Technology</option>
+                            <option>Deraya University</option>
+                            <option>Egyptian Chinese University</option>
+                            <option>Egyptian Russian University</option>
+                            <option>Egypt-Japan University of Science and Technology</option>
+                            <option>Fayoum University</option>
+                            <option>Future University in Egypt</option>
+                            <option>Heliopolis University</option>
+                            <option>Helwan University</option>
+                            <option>Kafrelsheikh University</option>
+                            <option>Mansoura University</option>
+                            <option>Matrouh University</option>
+                            <option>Menoufia University</option>
+                            <option>Minia University</option>
+                            <option>Misr International University</option>
+                            <option>Misr University for Science and Technology</option>
+                            <option>Modern Sciences and Arts University</option>
+                            <option>Modern University for Technology and Information</option>
+                            <option>Nahda University</option>
+                            <option>New Giza University</option>
+                            <option>New Valley University</option>
+                            <option>Nile University</option>
+                            <option>October 6 University</option>
+                            <option>Pharos University in Alexandria</option>
+                            <option>Port Said University</option>
+                            <option>Sinai University</option>
+                            <option>Sohag university</option>
+                            <option>South Valley University</option>
+                            <option>Suez Canal University</option>
+                            <option>Suez University</option>
+                            <option>Tanta University</option>
+                            <option>The American University in Cairo</option>
+                            <option>The Arab Academy for Management, Banking and Financial Sciences</option>
+                            <option>The British University in Egypt</option>
+                            <option>The German University in Cairo</option>
+                            <option>Université Française d'Égypte</option>
+                            <option>University of Sadat City</option>
+                            <option>University of Science and Technology at Zewail City</option>
+                            <option>Zagazig University</option>
+                            <option>University of Technology and Applied Sciences</option>
+                        </select>
+                    </div>
+
+                    <div id="major" class="form-group">
+                        <label for="Major">Major <span class="text-danger">*</span></label>
+                        <select id="Major" class="form-control" >
+                            <option selected="" disabled="" value="">Select Your Answer</option>
+                            <option>Accounting</option>
+                            <option>Agriculture</option>
+                            <option>Archaeology</option>
+                            <option>Arts</option>
+                            <option>Business Adminstration</option>
+                            <option>Center of Open Education</option>
+                            <option>Chemical Engineering</option>
+                            <option>Chinese</option>
+                            <option>Civil Engineering</option>
+                            <option>Commerce</option>
+                            <option>Computers and Artificial Intelligence</option>
+                            <option>Dar El-Ulum</option>
+                            <option>Economics</option>
+                            <option>Education For Early Childhood</option>
+                            <option>Electrical &amp; Electronic Engineering</option>
+                            <option>English</option>
+                            <option>French</option>
+                            <option>General Engineering</option>
+                            <option>German</option>
+                            <option>Hebrew</option>
+                            <option>HR Management</option>
+                            <option>Insurance</option>
+                            <option>Italian</option>
+                            <option>Japanese</option>
+                            <option>Law</option>
+                            <option>Mass Communication</option>
+                            <option>Mechanical &amp; Aerospace Engineering</option>
+                            <option>Medicine</option>
+                            <option>National Cancer Institute</option>
+                            <option>National Institute of Laser Enhanced Sciences (NILES)</option>
+                            <option>Nursing</option>
+                            <option>Oral and Dental Medicine</option>
+                            <option>Persian</option>
+                            <option>Pharmacy</option>
+                            <option>Physical Therapy</option>
+                            <option>Political Science</option>
+                            <option>Regional and Urban Planning</option>
+                            <option>Science</option>
+                            <option>Spanish</option>
+                            <option>Specific Education</option>
+                            <option>Swahili</option>
+                            <option>Turkish</option>
+                            <option>Veterinary Medicine</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div id="Citizenship" class="form-group">
+                        <label for="Nationality">Citizenship <span class="text-danger">*</span></label>
+                        <select id="Nationality" class="form-control" >
+                            <option>Select Your Answer</option>
+                            <option value="Egyptian">Egyptian</option>
+                            <option value="Foreigner">Foreigner</option>
+                            <option value="Dual Nationality (Egyptian &amp; Other)">Dual Citizenship (Egyptian &amp;
+                                Other)</option>
+                        </select>
+                    </div>
+
+                    <div id="national-address" class="form-group">
+                        <label for="Address_in_National_ID">Address in National ID (Or Passport) <span
+                                class="text-danger">*</span></label>
+                        <input type="text" id="Address_in_National_ID" placeholder="Enter Your Answer"
+                            class="form-control" >
+                    </div>
+
+                    <div id="residency-address" class="form-group">
+                        <label for="Residency_Address">Residency Address <span class="text-danger">(if the address is
+                                different from the one listed in the national ID) </span></label>
+                        <input type="text" autocomplete="off" id="Residency_Address" placeholder="Enter Your Answer"
+                            class="form-control">
+                    </div>
+
+                    <div id="daily-transport" class="form-group">
+                        <label for="Daily_Transportation_District">Daily Transportation District<span
+                                class="text-danger">*</span></label>
+                        <select id="Daily_Transportation_District" class="form-control" >
+                            <option selected="" disabled="" value="">Select Your Answer</option>
+                            <option>15 * May</option>
+                            <option>Abbasia</option>
+                            <option>Alf Maskan</option>
+                            <option>Carrfour Maadi</option>
+                            <option>EL Bahr El Aazam</option>
+                            <option>El Rehab Gate 24</option>
+                            <option>El Rehab Gate 20</option>
+                            <option>El Rehab Gate 13</option>
+                            <option>Faisal</option>
+                            <option>Haram</option>
+                            <option>Helwan</option>
+                            <option>Kobry El Kobba</option>
+                            <option>Maadi</option>
+                            <option>Madinaty</option>
+                            <option>Manial</option>
+                            <option>Merryland</option>
+                            <option>Moassassa</option>
+                            <option>Mohandseen</option>
+                            <option>Mokattam Nafora Sq</option>
+                            <option>Mostakbal</option>
+                            <option>Mokattam Asmarat</option>
+                            <option>Nasr City Hay Asher</option>
+                            <option>Nasr Ciry Rabaa </option>
+                            <option>Nasr Ciry Sabe3</option>
+                            <option>October Hosary Sq</option>
+                            <option>October MUST</option>
+                            <option>October Hyper 1</option>
+                            <option>Obour</option>
+                            <option>Remaya</option>
+                            <option>Sallam</option>
+                            <option>Sherouk</option>
+                            <option>Shoubra</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div id="civil-status" class="form-group">
+                        <label for="Civil_Status">Civil Status<span class="text-danger">*</span></label>
+                        <select id="Civil_Status" class="form-control" >
+                            <option>Select Your Answer</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Prefer not to mention">Prefer not to mention</option>
+                        </select>
+                    </div>
+
+                    <div id="religion" class="form-group">
+                        <label for="Religion">Religion<span class="text-danger">*</span></label>
+                        <select id="Religion" class="form-control" >
+                            <option>Select Your Answer</option>
+                            <option value="Muslim">Muslim</option>
+                            <option value="Christian">Christian</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to mention">Prefer not to mention</option>
+                        </select>
+                    </div>
+
+                    <div id="emergency" class="form-group">
+                        <label for="Emergency_Contact_Number">Emergency Contact Number</label>
+                        <input type="number" autocomplete="off" id="Emergency_Contact_Number"
+                            placeholder="Enter Your Answer" class="form-control" data-val="true"
+                            data-val-maxlength="MAX Length 11 digit" data-val-maxlength-max="11"
+                            data-val-minlength="MIN Length 11 digit" data-val-minlength-min="11"
+                            data-val-phone="Please Enter Valid Phone Number" name="Emergency_Contact_Number" value="">
+                        <span class="field-validation-valid" data-valmsg-for="Emergency_Contact_Number"
+                            data-valmsg-replace="true"></span>
+                    </div>
+
+                    <div id="gender" class="form-group">
+                        <label for="Gender">Gender<span class="text-danger">*</span></label>
+                        <select id="Gender" class="form-control" >
+                            <option>Select Your Answer</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Prefer not to mention">Prefer not to mention</option>
+                        </select>
+                    </div>
+
+                    <div id="military" class="form-group">
+                        <label for="Military_Status"> Military Status</label>
+                        <select id="Military_Status" class="form-control">
+                            <option>Select Your Answer</option>
+                            <option>Completed</option>
+                            <option>Exempted</option>
+                            <option>Postponed</option>
+                            <option>Didn't Apply</option>
+                        </select>
+                    </div>
+
+                    <div id="availability" class="form-group">
+                        <label for="Availability_to_Start">Availability to Start<span
+                                class="text-danger">*</span></label>
+                        <select id="Availability_to_Start" class="form-control" >
+                            <option>Select Your Answer</option>
+                            <option>As Soon As Possible</option>
+                            <option>1 Week from now</option>
+                            <option>2 Week from now</option>
+                            <option>3 Weeks from now</option>
+                            <option>1 Month from now</option>
+                            <option>On a specific date</option>
+                        </select>
+                    </div>
+
+                    <div id="work-location" class="form-group">
+                        <label for="Preferred_Work_Location">Preferred Work Location<span
+                                class="text-danger">*</span></label>
+                        <select id="Preferred_Work_Location" class="form-control" >
+                            <option>Select Your Answer</option>
+                            <option>(5th Settlement, New Cairo)</option>
+                            <option>(Mohandeseen)</option>
+                            <option>(Alexandria)</option>
+                            <option>(Tanta)</option>
+                            <option>Any</option>
+                        </select>
+                    </div>
+
+                    <div id="contact-center" class="form-group">
+                        <label for="Contact_Center_Experience_Existence">Contact Center Experience<span
+                                class="text-danger">*</span></label>
+                        <select id="Contact_Center_Experience_Existence" class="form-control" >
+                            <option selected="" disabled="" value="">Select Your Answer</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div id="acknowledge" class="form-group">
+                        <h3 style="text-align:start;color:rgb(120, 25, 209)">By filling out this application I
+                            acknowledge that: </h3>
+                        <ol>
+                            <li style="text-align:start">
+                                I'm responsible for the accuracy of all information provided
+                            </li>
+                            <li style="text-align:start">
+                                I’m 18 years old or above
+                            </li>
+                            <li style="text-align:start">
+                                Teleperformance Privacy Policy:
+                                <a href="./Privacy.pdf" target="_blank">Privacy Policy</a>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div id="acknowledged" class="form-group">
+                        <input autocomplete="off" type="checkbox" id="html" > <span>Acknowledged</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-info btn-block mb-4">
+                        Submit
+                    </button>
+
+                    <div class="card-footer">
+                        <p>2024 © Ziad Elsayed - Nader Hany - Mustafa </p>
+                    </div>
+                    <!-- <ul>
+                            {% for key, value in options.options.items() %}
+                            <li>{{ key }}: {{ value }}</li>
+                            {% endfor %}
+                        </ul> -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+          var options = {{ options | tojson | safe }};
+    </script>
+    <script src="../static/js/index.js"></script>
+</body>
+
+</html>
