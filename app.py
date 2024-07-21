@@ -222,6 +222,47 @@ def get_form_data(form_id):
     except Exception as e:
         print(f"An error occurred: {e}")
         return jsonify({'message': 'An error occurred while fetching the form data'}), 500
+    
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+
+@app.route('/formdata/', methods=['GET'])
+def get_formdata():
+    forms = FormData.query.all()
+    if forms:
+        data_list = [
+                {
+                    "id": data.id,
+                    "form_id":data.form_id,
+                    "fullname": data.fullname,
+                    "phone1": data.phone1,
+                    "phone2": data.phone2,
+                    "language": data.language,
+                    "language2": data.language2,
+                    "mail": data.mail,
+                    "date": data.date,
+                    "gradst": data.gradst,
+                    "university": data.university,
+                    "major": data.major,
+                    "address1": data.address1,
+                    "address2": data.address2,
+                    "transport": data.transport,
+                    "civilst": data.civilst,
+                    "religion": data.religion,
+                    "emergency": data.emergency,
+                    "citizenship": data.citizenship,
+                    "gender": data.gender,
+                    "military": data.military,
+                    "ccenter": data.ccenter,
+                    "worklocation": data.worklocation
+                } for data in forms
+            ]
+        return jsonify(data_list)
+    else:
+        return jsonify({'message': 'No forms found'}), 404
 
 
 if __name__ == '__main__':
