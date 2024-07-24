@@ -15,12 +15,16 @@ it is a forms for our friend mustafa .
 
 ## Admin form
 
-<img src="img1.png">
+<img src="admin.png">
 
 ## form example
 
 <img src="img2.png">
 <img src="img3.png">
+
+## Dashboard form
+
+<img src="dashboard.png">
 
 ## Getting Started
 
