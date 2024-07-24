@@ -18,16 +18,18 @@ CORS(app)
 db = SQLAlchemy(app)
 
 class Form(db.Model):
-    __tablename__ = 'forms'
+    __tablename__ = 'allforms'
 
     id = db.Column(db.String(50), primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     options = db.Column(MutableDict.as_mutable(db.JSON), nullable=False)
+    form_data = db.relationship('FormData', backref='form', cascade="all, delete-orphan")
 
 class FormData(db.Model):
     __tablename__ = 'formdata'
+    
     id = db.Column(db.String(50), primary_key=True)
-    form_id = db.Column(db.String(50), nullable=False)
+    form_id = db.Column(db.String(50), db.ForeignKey('allforms.id'), nullable=False)
     fullname = db.Column(db.String(100), nullable=True)
     phone1 = db.Column(db.String(100), nullable=True)
     phone2 = db.Column(db.String(100), nullable=True)
@@ -61,13 +63,6 @@ def create_tables():
         db.create_all()
 
 create_tables()
-
-# @app.route('/')
-# def Home():
-#     return render_template('index.html')
-
-
-
 
 @app.route('/form/<form_id>/data', methods=['POST'])
 def add_form_data(form_id):
@@ -107,20 +102,6 @@ def add_form_data(form_id):
         print(f"An error occurred: {e}")
         return jsonify({'message': 'An error occurred while adding the form data'}), 500
 
-@app.route('/forms/<form_id>/<form_data_id>', methods=['DELETE'])
-def delete_form_data(form_id, form_data_id):
-    try:
-        form_data = FormData.query.filter_by(form_id=form_id, id=form_data_id).first()
-        if form_data:
-            db.session.delete(form_data)
-            db.session.commit()
-            return jsonify({'message': 'Form data deleted successfully'}), 200
-        else:
-            return jsonify({'message': 'Form data not found'}), 404
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return jsonify({'message': 'An error occurred while deleting the form data'}), 500
-
 
 @app.route('/admin', methods=['GET'])
 def adminPage():
@@ -140,11 +121,8 @@ def create_form():
 def get_form(form_id):
     form = Form.query.get(form_id)
     if form:
-        # return jsonify({
-        #     'id': form.id,
-        #     'name': form.name,
-        #     'options': form.options
-        # })
+        
+        
        return render_template("index.html",options={"name":form.name,"options":form.options})
     else:
         return jsonify({'message': 'Form not found'}), 404
@@ -172,15 +150,21 @@ def update_form(form_id):
         return jsonify({'message': 'Form not found'}), 404
 
 # Endpoint to delete a form by ID
-@app.route('/forms/<string:form_id>', methods=['DELETE'])
+@app.route('/deleteform/<string:form_id>/', methods=['DELETE'])
 def delete_form(form_id):
-    form = Form.query.get(form_id)
-    if form:
-        db.session.delete(form)
-        db.session.commit()
-        return jsonify({'message': 'Form deleted successfully'})
-    else:
-        return jsonify({'message': 'Form not found'}), 404
+    form = Form.query.get_or_404(form_id)
+    db.session.delete(form)
+    db.session.commit()
+    return jsonify({'message': 'Form and associated data deleted successfully'}), 200
+
+
+# Endpoint to delete a specific FormData entry
+@app.route('/deleteforms/<string:form_id>/<string:formdata_id>/', methods=['DELETE'])
+def delete_formdata_entry(form_id, formdata_id):
+    formdata_entry = FormData.query.filter_by(form_id=form_id, id=formdata_id).first_or_404()
+    db.session.delete(formdata_entry)
+    db.session.commit()
+    return jsonify({'message': 'Form data entry deleted successfully'}), 200
 
 
 @app.route('/form/<form_id>/data', methods=['GET'])

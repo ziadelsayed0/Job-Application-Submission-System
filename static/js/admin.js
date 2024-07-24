@@ -73,4 +73,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.error('Error:', error);
         });
     });
+    //select all checked or not
+    document.getElementById('select-all').addEventListener('change', function() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    });
 });

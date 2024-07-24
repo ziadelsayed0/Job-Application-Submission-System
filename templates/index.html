@@ -44,13 +44,13 @@
 
                     <div id="full-name" class="form-group">
                         <label for="fullName">Full Name in English <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Enter Your Answer" >
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter Your Answer" required>
                     </div>
 
                     <div id="phone-no" class="form-group">
                         <label for="primaryPhoneNumber">Primary Phone Number <span class="text-danger">*</span></label>
                         <input type="tel" class="form-control" id="primaryPhoneNumber" placeholder="Enter Your Answer"
-                            >
+                            required>
                     </div>
 
                     <div id="other-phone" class="form-group">
@@ -63,7 +63,7 @@
                     <div id="language" class="form-group">
                         <label for="languageSelect">Main language you're applying for <span
                                 class="text-danger">*</span></label>
-                        <select class="form-control" id="languageSelect" >
+                        <select class="form-control" id="languageSelect" required>
                             <option>Select Your Answer</option>
                             <option>Arabic</option>
                             <option>Bengali</option>
@@ -117,20 +117,20 @@
                     <div id="mail" class="form-group">
                         <label for="MailAddress">Mail Address <span class="text-danger">*</span></label>
                         <input type="email" class="form-control" id="MailAddress" placeholder="Enter Your E-mail"
-                            >
+                            required>
                     </div>
 
 
                     <div id="date" class="form-group">
                         <label for="birthDate">Date Of Birth<span class="text-danger">*</span></label>
                         <input type="date" class="form-control" id="birthDate" placeholder="Enter Your birth date"
-                            >
+                            required>
                     </div>
 
 
                     <div id="graduate-status" class="form-group">
                         <label for="graduationStatus">Graduation Status <span class="text-danger">*</span></label>
-                        <select class="form-control" id="graduationStatus" >
+                        <select class="form-control" id="graduationStatus" required>
                             <option>Select Your Answer</option>
                             <option>Graduate</option>
                             <option>Dropped - Out </option>
@@ -428,7 +428,7 @@
                     </div>
 
                     <div id="acknowledged" class="form-group">
-                        <input autocomplete="off" type="checkbox" id="html" > <span>Acknowledged</span>
+                        <input autocomplete="off" type="checkbox" id="html" required> <span>Acknowledged</span>
                     </div>
 
                     <button type="submit" class="btn btn-outline-info btn-block mb-4">
