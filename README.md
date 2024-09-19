@@ -1,4 +1,4 @@
-# HireTracker
+# Job Application Submission System
 
 it is a forms for our friend mustafa .
 
