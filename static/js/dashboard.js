@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Fetch forms data
     fetch('/forms/')
         .then(response => response.json())
@@ -25,7 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         const cardHeader = document.createElement('div');
                         cardHeader.className = 'card-header d-flex justify-content-between align-items-center';
-                        
+
+                        // Form URL button
+                        const formUrl = document.createElement('button');
+                        formUrl.className = 'btn btn-sm bg-success text-white';
+                        // Add Material Icon and text to the button
+                        formUrl.innerHTML = '<span class="material-icons" style="font-size: 80%;vertical-align: middle;">arrow_forward</span> GO';
+                        formUrl.onclick = function () {
+                            window.location.href = `/forms/${form.id}`;  // Navigate to the form's URL
+                        };
+                        cardHeader.appendChild(formUrl);
+
                         // Form name
                         const formName = document.createElement('span');
                         formName.textContent = form.name;
@@ -35,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const deleteFormButton = document.createElement('button');
                         deleteFormButton.className = 'btn btn-danger btn-sm';
                         deleteFormButton.textContent = 'Delete Form';
-                        deleteFormButton.addEventListener('click', function() {
+                        deleteFormButton.addEventListener('click', function () {
                             if (confirm('Are you sure you want to delete this form and all its data?')) {
                                 // Remove card from the UI
                                 card.remove();
@@ -115,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             deleteButton.className = 'material-icons';
                             deleteButton.textContent = 'delete';
                             deleteButton.style = 'font-size:99%;color:red'
-                            deleteButton.addEventListener('click', function() {
+                            deleteButton.addEventListener('click', function () {
                                 if (confirm('Are you sure you want to delete this entry?')) {
                                     // Remove entry from the UI
                                     li.remove();
@@ -136,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             li.appendChild(deleteButton);
 
-                            li.addEventListener('click', function() {
+                            li.addEventListener('click', function () {
                                 const isVisible = detailsDiv.style.display === 'block';
                                 const allDetailsDivs = document.querySelectorAll('.details');
                                 allDetailsDivs.forEach(div => div.style.display = 'none');
@@ -151,13 +161,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         cardsContainer.appendChild(card);
 
                         // Toggle the card body when the card header is clicked
-                        cardHeader.addEventListener('click', function() {
+                        cardHeader.addEventListener('click', function () {
                             cardBody.style.display = cardBody.style.display === 'none' || cardBody.style.display === '' ? 'block' : 'none';
                         });
                     });
 
                     // Implement search functionality
-                    document.getElementById('searchInput').addEventListener('keyup', function() {
+                    document.getElementById('searchInput').addEventListener('keyup', function () {
                         const searchValue = this.value.toLowerCase();
                         const cards = document.querySelectorAll('#formCardsContainer .card');
                         cards.forEach(card => {
