@@ -9,200 +9,228 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #a1aeb1dc;
+            background: linear-gradient(135deg, #6a11cb 25%, #2575fc 50%, #ff6f91 75%, #f9b24e 100%);
         }
-        h1{
+
+        h1 {
             color: #085c6b;
         }
+
         .form-container {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .custom-checkbox .custom-control-label::before {
             background-color: #ffffff;
         }
-        .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+
+        .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
             background-color: #007bff;
         }
+
         .header-image {
             width: 100%;
             height: 250px;
             border-radius: 8px 8px 0 0;
         }
+
         .card-footer {
             background-color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            padding-top: 4%;
+        }
+
+        .gradient-btn {
+            background: linear-gradient(45deg, #6a11cb, #2575fc, #ff6f91);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .gradient-btn:hover {
+            background: linear-gradient(45deg, #ff6f91, #f9b24e, #6a11cb);
+            text-decoration: none;
         }
     </style>
 </head>
 
 <body>
     <div class="container mt-5">
-        <div class="form-container">
-            <h1 class="text-center mb-4">Admin Form</h1>
-            <img src="../static/assets/images/ai3.jpg" class="header-image" alt="Header Image">
-            <form id="adminForm">
-                <div class="form-group">
-                    <label for="formname">Name:</label>
-                    <input type="text" class="form-control" id="formname" name="name" required>
-                </div>
-                <fieldset>
-                    <legend>Options:</legend>
-                    <div class="row mb-3">
-                        <div class="custom-control custom-checkbox col-12">
-                            <input type="checkbox" class="custom-control-input" id="select-all">
-                            <label class="custom-control-label" for="select-all">Select All</label>
-                        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 form-container">
+                <a href="{{ url_for('dashboard') }}" class="gradient-btn">Go to Dashboard</a>
+                <h1 class="text-center mb-4">Admin Form</h1>
+                <img src="../static/assets/images/header2.jpg" class="header-image" alt="Header Image">
+                <form id="adminForm">
+                    <div class="form-group">
+                        <label for="formname">Name:</label>
+                        <input type="text" class="form-control" id="formname" name="name" required>
                     </div>
-                    <div class="row">
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="full-name" name="full-name">
-                                <label class="custom-control-label" for="full-name">Full Name</label>
+                    <fieldset>
+                        <legend>Options:</legend>
+                        <div class="row mb-3">
+                            <div class="custom-control custom-checkbox col-12">
+                                <input type="checkbox" class="custom-control-input" id="select-all">
+                                <label class="custom-control-label" for="select-all">Select All</label>
                             </div>
                         </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="phone1" name="phone1">
-                                <label class="custom-control-label" for="phone1">Phone1</label>
+                        <div class="row">
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="full-name" name="full-name">
+                                    <label class="custom-control-label" for="full-name">Full Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="phone1" name="phone1">
+                                    <label class="custom-control-label" for="phone1">Phone1</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="phone2" name="phone2">
+                                    <label class="custom-control-label" for="phone2">Phone2</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="language" name="language">
+                                    <label class="custom-control-label" for="language">Language</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="phone2" name="phone2">
-                                <label class="custom-control-label" for="phone2">Phone2</label>
+                        <div class="row">
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="language2">
+                                    <label class="custom-control-label" for="language2">Language2</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="mail">
+                                    <label class="custom-control-label" for="mail">Mail</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="date">
+                                    <label class="custom-control-label" for="date">Date</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="gradst">
+                                    <label class="custom-control-label" for="gradst">Graduation Status</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="language" name="language">
-                                <label class="custom-control-label" for="language">Language</label>
+                        <div class="row">
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="university">
+                                    <label class="custom-control-label" for="university">University</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="major">
+                                    <label class="custom-control-label" for="major">Major</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="address1">
+                                    <label class="custom-control-label" for="address1">Address1</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="address2">
+                                    <label class="custom-control-label" for="address2">Address2</label>
+                                </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="civilst">
+                                    <label class="custom-control-label" for="civilst">Civil status</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="religion">
+                                    <label class="custom-control-label" for="religion">Religion</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="emergency">
+                                    <label class="custom-control-label" for="emergency">Emergency</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="citizenship">
+                                    <label class="custom-control-label" for="citizenship">Citizenship</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="gender">
+                                    <label class="custom-control-label" for="gender">Gender</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="military">
+                                    <label class="custom-control-label" for="military">Military</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="ccenter">
+                                    <label class="custom-control-label" for="ccenter">ccenter</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="worklocation">
+                                    <label class="custom-control-label" for="worklocation">Worklocation</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="transport">
+                                    <label class="custom-control-label" for="transport">Transport</label>
+                                </div>
+                            </div>
+                            <!-- Add more checkboxes as per your list -->
+                        </div>
+                    </fieldset>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-outline-info btn-block mb-4">Submit</button>
                     </div>
-                    <div class="row">
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="language2">
-                                <label class="custom-control-label" for="language2">Language2</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="mail">
-                                <label class="custom-control-label" for="mail">Mail</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="date">
-                                <label class="custom-control-label" for="date">Date</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="gradst">
-                                <label class="custom-control-label" for="gradst">Graduation Status</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="university">
-                                <label class="custom-control-label" for="university">University</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="major">
-                                <label class="custom-control-label" for="major">Major</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="address1">
-                                <label class="custom-control-label" for="address1">Address1</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="address2">
-                                <label class="custom-control-label" for="address2">Address2</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="civilst">
-                                <label class="custom-control-label" for="civilst">Civil status</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="religion">
-                                <label class="custom-control-label" for="religion">Religion</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="emergency">
-                                <label class="custom-control-label" for="emergency">Emergency</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="citizenship">
-                                <label class="custom-control-label" for="citizenship">Citizenship</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="gender">
-                                <label class="custom-control-label" for="gender">Gender</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="military">
-                                <label class="custom-control-label" for="military">Military</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="ccenter">
-                                <label class="custom-control-label" for="ccenter">ccenter</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="worklocation">
-                                <label class="custom-control-label" for="worklocation">Worklocation</label>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-2">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="transport">
-                                <label class="custom-control-label" for="transport">Transport</label>
-                            </div>
-                        </div>
-                        <!-- Add more checkboxes as per your list -->
-                    </div>
-                </fieldset>
-                <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-outline-info btn-block mb-4">Submit</button>
-                </div>
 
-                <div class="card-footer">
-                    <p>2024 © Ziad Elsayed - Nader Hany - Mustafa Esmail </p>
-                </div>
-            </form>
+                    <div class="card-footer">
+                        <p>2024 © Ziad Elsayed - Nader Hany - Mustafa Esmail </p>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
+
+
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

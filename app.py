@@ -1,6 +1,4 @@
 from flask import Flask, request, jsonify, render_template
-
-from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from sqlalchemy.ext.mutable import MutableDict
@@ -104,6 +102,7 @@ def add_form_data(form_id):
 
 
 @app.route('/admin', methods=['GET'])
+@app.route('/', methods=['GET'])
 def adminPage():
    return render_template("admin.html")
 
