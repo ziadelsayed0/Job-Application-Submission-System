@@ -1,1 +1,1 @@
-web: gunicorn -w 4 app:app 0.0.0.0:5000
+web: python.exe app.py 0.0.0.0:8000
