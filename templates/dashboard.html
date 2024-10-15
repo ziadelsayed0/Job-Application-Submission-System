@@ -50,6 +50,20 @@
         .details label {
             font-weight: bold;
         }
+        .gradient-btn {
+            background: linear-gradient(45deg, #6a11cb, #2575fc, #ff6f91);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .gradient-btn:hover {
+            background: linear-gradient(45deg, #ff6f91, #f9b24e, #6a11cb);
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -57,8 +71,9 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8 form-container">
+                <a href="{{ url_for('adminPage') }}" class="btn btn-primary btn-block gradient-btn mb-3">Go to Admin Panel</a>
                 <h1 class="mb-4 text-center">All Forms Data</h1>
-
+                
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <input type="text" class="form-control" id="searchInput" placeholder="Search...">
