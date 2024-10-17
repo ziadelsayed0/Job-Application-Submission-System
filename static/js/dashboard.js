@@ -26,6 +26,21 @@ document.addEventListener('DOMContentLoaded', function () {
                         const cardHeader = document.createElement('div');
                         cardHeader.className = 'card-header d-flex justify-content-between align-items-center';
 
+
+                        const downlaod_go_btns = document.createElement('div');
+                        downlaod_go_btns.className = 'downlaod_go_btns d-flex justify-content-between align-items-center';
+
+                        //Export button
+                        const excel_btn = document.createElement('a');
+                        excel_btn.className ='btn btn-primary btn-sm text-white'
+                        excel_btn.style.borderRadius = '5px'
+                        excel_btn.style.marginRight= '15px'
+                        excel_btn.innerHTML = '<span class="material-icons" style="font-size: 100%">file_download</span>'
+                        excel_btn.onclick = function(){
+                            window.location.href=`/export_excel/${form.id}/${form.name}`;
+                        }
+                        downlaod_go_btns.appendChild(excel_btn);
+
                         // Form URL button
                         const formUrl = document.createElement('button');
                         formUrl.className = 'btn btn-sm bg-success text-white';
@@ -34,7 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         formUrl.onclick = function () {
                             window.location.href = `/forms/${form.id}`;  // Navigate to the form's URL
                         };
-                        cardHeader.appendChild(formUrl);
+                        downlaod_go_btns.appendChild(formUrl);
+
+                        cardHeader.appendChild(downlaod_go_btns)
 
                         // Form name
                         const formName = document.createElement('span');

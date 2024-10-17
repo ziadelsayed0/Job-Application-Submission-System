@@ -1,9 +1,11 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from sqlalchemy.ext.mutable import MutableDict
 import json
 import uuid
+import pandas as pd
+from io import BytesIO
 
 
 app = Flask(__name__)
@@ -246,6 +248,53 @@ def get_formdata():
         return jsonify(data_list)
     else:
         return jsonify({'message': 'No forms found'}), 404
+    
+# 
+@app.route('/export_excel/<form_id>/<form_name>')
+def export_excel(form_id,form_name):
+
+    form_data = FormData.query.filter_by(form_id=form_id).all()
+    if not form_data:
+        return "No data available", 400
+
+    # Convert form data to a list of dictionaries
+    data_list = [
+        {
+            "fullname": data.fullname,
+            "phone1": data.phone1,
+            "phone2": data.phone2,
+            "language": data.language,
+            "language2": data.language2,
+            "mail": data.mail,
+            "date": data.date,
+            "gradst": data.gradst,
+            "university": data.university,
+            "major": data.major,
+            "address1": data.address1,
+            "address2": data.address2,
+            "transport": data.transport,
+            "civilst": data.civilst,
+            "religion": data.religion,
+            "emergency": data.emergency,
+            "citizenship": data.citizenship,
+            "gender": data.gender,
+            "military": data.military,
+            "ccenter": data.ccenter,
+            "worklocation": data.worklocation
+        } for data in form_data
+    ]
+
+    df = pd.DataFrame(data_list)
+
+    # Create an Excel file in memory
+    output = BytesIO()
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:
+        df.to_excel(writer, index=False, sheet_name='Form Submissions')
+
+    output.seek(0)
+
+    return send_file(output, download_name=f'{form_name}.xlsx', as_attachment=True)
+
 
 
 if __name__ == '__main__':

@@ -2,3 +2,5 @@ flask
 SQLAlchemy
 flask_sqlalchemy
 flask-cors
+openpyxl
+pandas
