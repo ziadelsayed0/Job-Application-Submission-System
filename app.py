@@ -14,7 +14,7 @@ CORS(app)
 
 
 db = SQLAlchemy(app)
- 
+
 class Form(db.Model):
     __tablename__ = 'allforms'
 
