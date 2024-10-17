@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Form</title>
+    <link rel="icon" type="image" href="../static/assets/images/logo.png" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
@@ -41,26 +42,28 @@
         }
 
         .header-container {
+            background-color: white;
             width: 100%;
-            /* Adjust width as needed */
-            height: 200px;
-            /* Set the height you want to show */
-            overflow: hidden;
-            /* Hide the overflow */
-            position: relative;
-            /* Position relative for absolute positioning of the image */
+            height: 22%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+                height: 15%;
+            }
         }
 
         .header-image {
-            position: absolute;
-            /* Allows us to position the image */
-            top: -50px;
-            /* Adjust the top position to crop the image */
-            left: 0;
-            /* Align the image to the left */
             width: 100%;
-            /* Ensure the image covers the entire width */
+            height: 100%;
+            border-radius: 8px 8px 0 0;
         }
+
+
 
         .card-footer {
             background-color: rgba(255, 255, 255, 0.5);
@@ -89,10 +92,11 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8 form-container">
-                <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-block gradient-btn mb-3">Go to Dashboard</a>
+                <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-block gradient-btn mb-3">Go to
+                    Dashboard</a>
                 <h1 class="text-center mb-4 ">Admin Form</h1>
                 <div class="header-container">
-                    <img src="../static/assets/images/header2.jpg" class="header-image" alt="Header Image">
+                    <img src="../static/assets/images/header3.png" class="header-image" alt="Header Image">
                 </div>
                 <form id="adminForm">
                     <div class="form-group">
