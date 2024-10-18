@@ -2,7 +2,7 @@ console.log("JSON Options:", options);
 config = options.options;
 
 formname = document.getElementById("formname");
-formname.textContent  = options.name;
+formname.textContent = options.name;
 
 fullname = document.getElementById("full-name");
 phone1 = document.getElementById("phone-no");
@@ -58,10 +58,10 @@ function getFormIdFromUrl() {
     return urlParts[urlParts.length - 1];
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("your-form-id");
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
 
         const formData = {
@@ -98,14 +98,41 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             body: JSON.stringify(formData)
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            alert('Form submitted successfully');
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            alert('Error submitting form');
-        });
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Form submitted successfully');
+                clearForm();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Error submitting form');
+            });
     });
 });
+
+//to clean form after submittion
+function clearForm() {
+    document.getElementById("fullName").value = '';
+    document.getElementById("primaryPhoneNumber").value = '';
+    document.getElementById("otherPhoneNumber").value = '';
+    document.getElementById("languageSelect").value = '';
+    document.getElementById("SecondLanguageSelect").value = '';
+    document.getElementById("MailAddress").value = '';
+    document.getElementById("birthDate").value = '';
+    document.getElementById("graduationStatus").value = '';
+    document.getElementById("universities").value = '';
+    document.getElementById("Major").value = '';
+    document.getElementById("Address_in_National_ID").value = '';
+    document.getElementById("Residency_Address").value = '';
+    document.getElementById("Daily_Transportation_District").value = '';
+    document.getElementById("Civil_Status").value = '';
+    document.getElementById("Religion").value = '';
+    document.getElementById("Emergency_Contact_Number").value = '';
+    document.getElementById("Nationality").value = '';
+    document.getElementById("Gender").value = '';
+    document.getElementById("Military_Status").value = '';
+    document.getElementById("Availability_to_Start").value = '';
+    document.getElementById("Contact_Center_Experience_Existence").value = '';
+    document.getElementById("Preferred_Work_Location").value = '';
+}
