@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         card.className = 'card mb-3';
 
                         const cardHeader = document.createElement('div');
-                        cardHeader.className = 'card-header d-flex justify-content-between align-items-center';
+                        cardHeader.className = 'card-header d-flex justify-content-between align-items-center ';
 
 
                         const downlaod_go_btns = document.createElement('div');
