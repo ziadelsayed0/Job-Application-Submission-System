@@ -1,1 +1,0 @@
-web: python.exe app.py 0.0.0.0:8080
