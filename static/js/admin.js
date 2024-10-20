@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const ccenter = document.getElementById("ccenter");
     const worklocation = document.getElementById("worklocation");
 
+
+    fullname.checked = true;  
+    phone1.checked = true;   
+    language.checked =true; 
+    mail.checked = true; 
+    date.checked =true;
+    gradst.checked=true;
+
+    
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
